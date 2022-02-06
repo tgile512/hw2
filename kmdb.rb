@@ -70,26 +70,81 @@
 # Use `Model.destroy_all` code.
 # TODO!
 
-# Generate models and tables, according to the domain model
-# TODO!
+Movie.destroy_all
+Person.destroy_all
+Role.destroy_all
 
-# Insert data into your database that reflects the sample data shown above
-# Do not use hard-coded foreign key IDs.
-# TODO!
+# Creatng people data
 
-# Prints a header for the movies output
-puts "Movies"
-puts "======"
-puts ""
+person = Person.new
+person.name = "Christopher Nolan"
+person.save
 
-# Query the movies data and loop through the results to display the movies output
-# TODO!
+director = Person.where({name: "Christopher Nolan"})[0]
 
-# Prints a header for the cast output
-puts ""
-puts "Top Cast"
-puts "========"
-puts ""
+person = Person.new
+person.name = "Christian Bale"
+person.save
 
-# Query the cast data and loop through the results to display the cast output for each movie
-# TODO!
+person = Person.new
+person.name = "Michael Caine"
+person.save
+
+person = Person.new
+person.name = "Liam Neeson"
+person.save
+
+person = Person.new
+person.name = "Katie Holmes"
+person.save
+
+person = Person.new
+person.name = "Gary Oldman"
+person.save
+
+person = Person.new
+person.name = "Heath Ledger"
+person.save
+
+person = Person.new
+person.name = "Aaron Eckhart"
+person.save
+
+person = Person.new
+person.name = "Maggie Gyllenhaal"
+person.save
+
+person = Person.new
+person.name = "Tom Hardy"
+person.save
+
+person = Person.new
+person.name = "Joseph Gordon-Levitt"
+person.save
+
+person = Person.new
+person.name = "Anne Hathaway"
+person.save
+
+# Creating movie data
+
+movie = Movie.new
+    movie.title = "Batman Begins"
+    movie.year_released = 2005
+    movie.rated = "PG-13"
+    movie.person_id = director.id
+movie.save
+
+movie = Movie.new
+    movie.title = "The Dark Knight"
+    movie.year_released = 2008
+    movie.rated = "PG-13"
+    movie.person_id = director.id
+movie.save
+
+movie = Movie.new
+    movie.title = "The Dark Knight Rises"
+    movie.year_released = 2012
+    movie.rated = "PG-13"
+    movie.person_id = director.id
+movie.save
