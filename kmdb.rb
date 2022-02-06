@@ -126,7 +126,7 @@ person = Person.new
 person.name = "Anne Hathaway"
 person.save
 
-# Creating movie data
+# Creating movie and role data
 
 movie = Movie.new
     movie.title = "Batman Begins"
@@ -135,6 +135,8 @@ movie = Movie.new
     movie.person_id = director.id
 movie.save
 
+batman_begins = Movie.where({title: "Batman Begins"})[0]
+
 movie = Movie.new
     movie.title = "The Dark Knight"
     movie.year_released = 2008
@@ -142,9 +144,123 @@ movie = Movie.new
     movie.person_id = director.id
 movie.save
 
+dark_knight = Movie.where({title: "The Dark Knight"})[0]
+
 movie = Movie.new
     movie.title = "The Dark Knight Rises"
     movie.year_released = 2012
     movie.rated = "PG-13"
     movie.person_id = director.id
 movie.save
+
+dark_knight_rises = Movie.where({title: "The Dark Knight Rises"})[0]
+
+# Creating role data
+
+christian_bale = Person.where({name: "Christian Bale"})[0]
+michael_caine = Person.where({name: "Michael Caine"})[0]
+particular_set_of_skills = Person.where({name: "Liam Neeson"})[0]
+katie_holmes = Person.where({name: "Katie Holmes"})[0]
+gary_oldman = Person.where({name: "Gary Oldman"})[0]
+heath_ledger_RIP = Person.where({name: "Heath Ledger"})[0]
+aaron_eckhart = Person.where({name: "Aaron Eckhart"})[0]
+maggie_gyllenhaal = Person.where({name: "Maggie Gyllenhaal"})[0]
+tom_hardy = Person.where({name: "Tom Hardy"})[0]
+joseph_levitt = Person.where({name: "Joseph Gordon-Levitt"})[0]
+anne_hathaway = Person.where({name: "Anne Hathaway"})[0]
+
+## Batman Begins
+role = Role.new
+    role.movie_id = batman_begins.id
+    role.person_id = christian_bale.id
+    role.character_name = "Bruce Wayne"
+role.save
+
+role = Role.new
+    role.movie_id = batman_begins.id
+    role.person_id = michael_caine.id
+    role.character_name = "Alfred"
+role.save
+
+role = Role.new
+    role.movie_id = batman_begins.id
+    role.person_id = particular_set_of_skills.id
+    role.character_name = "Ra's Al Ghul"
+role.save
+
+role = Role.new
+    role.movie_id = batman_begins.id
+    role.person_id = katie_holmes.id
+    role.character_name = "Rachel Dawes"
+role.save
+
+role = Role.new
+    role.movie_id = batman_begins.id
+    role.person_id = gary_oldman.id
+    role.character_name = "Commissioner Gordon"
+role.save
+
+## Dark Knight
+
+role = Role.new
+    role.movie_id = dark_knight.id
+    role.person_id = christian_bale.id
+    role.character_name = "Bruce Wayne"
+role.save
+
+role = Role.new
+    role.movie_id = dark_knight.id
+    role.person_id = heath_ledger_RIP.id
+    role.character_name = "Joker"
+role.save
+
+role = Role.new
+    role.movie_id = dark_knight.id
+    role.person_id = aaron_eckhart.id
+    role.character_name = "Harvey Dent"
+role.save
+
+role = Role.new
+    role.movie_id = dark_knight.id
+    role.person_id = michael_caine.id
+    role.character_name = "Alfred"
+role.save
+
+role = Role.new
+    role.movie_id = dark_knight.id
+    role.person_id = maggie_gyllenhaal.id
+    role.character_name = "Rachel Dawes"
+role.save
+
+## Dark Knight Rises
+
+role = Role.new
+    role.movie_id = dark_knight_rises.id
+    role.person_id = christian_bale.id
+    role.character_name = "Bruce Wayne"
+role.save
+
+role = Role.new
+    role.movie_id = dark_knight_rises.id
+    role.person_id = gary_oldman.id
+    role.character_name = "Commissioner Gordon"
+role.save
+
+role = Role.new
+    role.movie_id = dark_knight_rises.id
+    role.person_id = tom_hardy.id
+    role.character_name = "Bane"
+role.save
+
+role = Role.new
+    role.movie_id = dark_knight_rises.id
+    role.person_id = joseph_levitt.id
+    role.character_name = "John Blake"
+role.save
+
+role = Role.new
+    role.movie_id = dark_knight_rises.id
+    role.person_id = anne_hathaway.id
+    role.character_name = "Selina Kyle"
+role.save
+
