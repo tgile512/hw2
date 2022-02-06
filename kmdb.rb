@@ -264,3 +264,24 @@ role = Role.new
     role.character_name = "Selina Kyle"
 role.save
 
+p "Movies"
+p "======"
+p ""
+
+movies = Movie.all
+for movie in movies
+    director = Person.where({id: movie.person_id})[0]
+    puts "#{movie.title}     #{movie.year_released}     #{movie.rated}     #{director.name}"
+end
+
+p ""
+p "Top Cast"
+p "======"
+p ""
+
+roles = Role.all
+for role in roles
+    movie = Movie.where({id: role.movie_id})[0]
+    person = Person.where({id: role.person_id})[0]
+    puts "#{movie.title} #{person.name} #{role.character_name}"
+end
