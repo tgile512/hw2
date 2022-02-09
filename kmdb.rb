@@ -74,7 +74,7 @@ Movie.destroy_all
 Person.destroy_all
 Role.destroy_all
 
-# Creatng people data
+# Creatng the people data
 
 person = Person.new
 person.name = "Christopher Nolan"
